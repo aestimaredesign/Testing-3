@@ -763,89 +763,386 @@
     <main id="main-content">
         <div class="calculator-grid">
             <div class="input-section">
-                <!-- ALL PREVIOUS INPUT SECTIONS REMAIN THE SAME - I'm omitting for brevity -->
-                <!-- The entire input section from the previous code should be here -->
-                <!-- ... -->
-                
-                <!-- Add new input fields for indirect costs -->
-                <div class="tab-content active" id="general-tab" role="tabpanel" aria-labelledby="tab-general">
-                    <!-- Previous inputs remain... -->
-                    
-                    <div class="work-item" style="margin-top: 20px;">
-                        <div class="work-item-title">
-                            <span>Indirect Cost Parameters</span>
+                <!-- PROJECT INPUT SECTION (MISSING FROM YOUR CODE) -->
+                <div class="work-item">
+                    <div class="work-item-title">
+                        <span>Project Input</span>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="projectName">Project Name *</label>
+                            <input type="text" id="projectName" value="Commercial Fit-Out Project" required>
+                            <div class="error-message" id="projectNameError">Project name is required</div>
                         </div>
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label for="tempFacilitiesRate" class="tooltip">Temporary Facilities (%)<span class="tooltiptext">Percentage for temporary site facilities</span></label>
-                                <input type="number" id="tempFacilitiesRate" value="2" step="0.1" min="0" max="20" aria-describedby="tempFacilitiesRateDesc">
-                                <div class="error-message" id="tempFacilitiesRateError">Must be between 0-20%</div>
-                                <div id="tempFacilitiesRateDesc" class="sr-only">Percentage for temporary site facilities</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="powerConsumptionRate" class="tooltip">Power Consumption (%)<span class="tooltiptext">Percentage for power consumption</span></label>
-                                <input type="number" id="powerConsumptionRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="powerConsumptionRateDesc">
-                                <div class="error-message" id="powerConsumptionRateError">Must be between 0-10%</div>
-                                <div id="powerConsumptionRateDesc" class="sr-only">Percentage for power consumption</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="waterConsumptionRate" class="tooltip">Water Consumption (%)<span class="tooltiptext">Percentage for water consumption</span></label>
-                                <input type="number" id="waterConsumptionRate" value="0.5" step="0.1" min="0" max="5" aria-describedby="waterConsumptionRateDesc">
-                                <div class="error-message" id="waterConsumptionRateError">Must be between 0-5%</div>
-                                <div id="waterConsumptionRateDesc" class="sr-only">Percentage for water consumption</div>
-                            </div>
+                        <div class="input-group">
+                            <label for="bidNumber">Bid/Project Number</label>
+                            <input type="text" id="bidNumber" value="BID-2024-001">
                         </div>
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label for="permitsTaxesRate" class="tooltip">Permits & Taxes (%)<span class="tooltiptext">Percentage for permits and taxes</span></label>
-                                <input type="number" id="permitsTaxesRate" value="3" step="0.1" min="0" max="15" aria-describedby="permitsTaxesRateDesc">
-                                <div class="error-message" id="permitsTaxesRateError">Must be between 0-15%</div>
-                                <div id="permitsTaxesRateDesc" class="sr-only">Percentage for permits and taxes</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="safetyServicesRate" class="tooltip">Safety/Sanitation/Security (%)<span class="tooltiptext">Percentage for safety, sanitation, and security services</span></label>
-                                <input type="number" id="safetyServicesRate" value="2.5" step="0.1" min="0" max="10" aria-describedby="safetyServicesRateDesc">
-                                <div class="error-message" id="safetyServicesRateError">Must be between 0-10%</div>
-                                <div id="safetyServicesRateDesc" class="sr-only">Percentage for safety, sanitation, and security services</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="bondsInsurancesRate" class="tooltip">Bonds & Insurances (%)<span class="tooltiptext">Percentage for bonds and insurances</span></label>
-                                <input type="number" id="bondsInsurancesRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="bondsInsurancesRateDesc">
-                                <div class="error-message" id="bondsInsurancesRateError">Must be between 0-10%</div>
-                                <div id="bondsInsurancesRateDesc" class="sr-only">Percentage for bonds and insurances</div>
-                            </div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label for="asBuiltPlansRate" class="tooltip">As-Built Plans (%)<span class="tooltiptext">Percentage for as-built plans and documentation</span></label>
-                                <input type="number" id="asBuiltPlansRate" value="1" step="0.1" min="0" max="5" aria-describedby="asBuiltPlansRateDesc">
-                                <div class="error-message" id="asBuiltPlansRateError">Must be between 0-5%</div>
-                                <div id="asBuiltPlansRateDesc" class="sr-only">Percentage for as-built plans and documentation</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="deliveryHaulingRate" class="tooltip">Delivery & Hauling (%)<span class="tooltiptext">Percentage for delivery and hauling charges</span></label>
-                                <input type="number" id="deliveryHaulingRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="deliveryHaulingRateDesc">
-                                <div class="error-message" id="deliveryHaulingRateError">Must be between 0-10%</div>
-                                <div id="deliveryHaulingRateDesc" class="sr-only">Percentage for delivery and hauling charges</div>
-                            </div>
-                            <div class="input-group">
-                                <label for="contingencyRate" class="tooltip">Contingency (%)<span class="tooltiptext">Percentage for contingency costs</span></label>
-                                <input type="number" id="contingencyRate" value="5" step="0.1" min="0" max="20" aria-describedby="contingencyRateDesc">
-                                <div class="error-message" id="contingencyRateError">Must be between 0-20%</div>
-                                <div id="contingencyRateDesc" class="sr-only">Percentage for contingency costs</div>
-                            </div>
+                        <div class="input-group">
+                            <label for="clientName">Client Name</label>
+                            <input type="text" id="clientName" value="ABC Development Corporation">
                         </div>
                     </div>
-                    
-                    <div class="circuit-summary">
-                        <h4>Circuit Summary</h4>
-                        <div id="circuitSummaryContent">
-                            <p>No circuits defined yet. Add circuits in the Circuit Types tab.</p>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="projectLocation">Project Location</label>
+                            <input type="text" id="projectLocation" value="Makati City, Philippines">
+                        </div>
+                        <div class="input-group">
+                            <label for="preparedBy">Prepared by</label>
+                            <input type="text" id="preparedBy" value="John Smith, Licensed Electrical Engineer">
+                        </div>
+                        <div class="input-group">
+                            <label for="projectDate">Date</label>
+                            <input type="date" id="projectDate">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency">
+                                <option value="PHP" selected>Philippine Peso (PHP)</option>
+                                <option value="USD">US Dollar (USD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="JPY">Japanese Yen (JPY)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                
-                <!-- ... rest of the input sections ... -->
+
+                <!-- Tab Container -->
+                <div class="tab-container">
+                    <div class="tabs" role="tablist">
+                        <div class="tab active" data-tab="general" id="tab-general" role="tab" aria-controls="general-tab" aria-selected="true">General</div>
+                        <div class="tab" data-tab="circuit" id="tab-circuit" role="tab" aria-controls="circuit-tab" aria-selected="false">Circuit Types</div>
+                        <div class="tab" data-tab="distribution" id="tab-distribution" role="tab" aria-controls="distribution-tab" aria-selected="false">Box Distribution</div>
+                        <div class="tab" data-tab="cost" id="tab-cost" role="tab" aria-controls="cost-tab" aria-selected="false">Cost Parameters</div>
+                    </div>
+
+                    <!-- General Tab -->
+                    <div class="tab-content active" id="general-tab" role="tabpanel" aria-labelledby="tab-general">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="wallArea" class="tooltip">Wall Area (m²)<span class="tooltiptext">Total wall area to be covered</span></label>
+                                <input type="number" id="wallArea" value="250" min="0" step="0.1" required>
+                                <div class="error-message" id="wallAreaError">Wall area must be greater than 0</div>
+                            </div>
+                            <div class="input-group">
+                                <label for="density" class="tooltip">Box Density (boxes/m²)<span class="tooltiptext">Number of boxes per square meter</span></label>
+                                <input type="number" id="density" value="0.6" min="0" step="0.01" required>
+                                <div class="error-message" id="densityError">Density must be positive</div>
+                            </div>
+                            <div class="input-group">
+                                <label for="wastage" class="tooltip">Wastage (%)<span class="tooltiptext">Material wastage percentage</span></label>
+                                <input type="number" id="wastage" value="10" min="0" max="30" step="0.1">
+                                <div class="error-message" id="wastageError">Must be between 0-30%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add new input fields for indirect costs -->
+                        <div class="work-item" style="margin-top: 20px;">
+                            <div class="work-item-title">
+                                <span>Indirect Cost Parameters</span>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="tempFacilitiesRate" class="tooltip">Temporary Facilities (%)<span class="tooltiptext">Percentage for temporary site facilities</span></label>
+                                    <input type="number" id="tempFacilitiesRate" value="2" step="0.1" min="0" max="20" aria-describedby="tempFacilitiesRateDesc">
+                                    <div class="error-message" id="tempFacilitiesRateError">Must be between 0-20%</div>
+                                    <div id="tempFacilitiesRateDesc" class="sr-only">Percentage for temporary site facilities</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="powerConsumptionRate" class="tooltip">Power Consumption (%)<span class="tooltiptext">Percentage for power consumption</span></label>
+                                    <input type="number" id="powerConsumptionRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="powerConsumptionRateDesc">
+                                    <div class="error-message" id="powerConsumptionRateError">Must be between 0-10%</div>
+                                    <div id="powerConsumptionRateDesc" class="sr-only">Percentage for power consumption</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="waterConsumptionRate" class="tooltip">Water Consumption (%)<span class="tooltiptext">Percentage for water consumption</span></label>
+                                    <input type="number" id="waterConsumptionRate" value="0.5" step="0.1" min="0" max="5" aria-describedby="waterConsumptionRateDesc">
+                                    <div class="error-message" id="waterConsumptionRateError">Must be between 0-5%</div>
+                                    <div id="waterConsumptionRateDesc" class="sr-only">Percentage for water consumption</div>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="permitsTaxesRate" class="tooltip">Permits & Taxes (%)<span class="tooltiptext">Percentage for permits and taxes</span></label>
+                                    <input type="number" id="permitsTaxesRate" value="3" step="0.1" min="0" max="15" aria-describedby="permitsTaxesRateDesc">
+                                    <div class="error-message" id="permitsTaxesRateError">Must be between 0-15%</div>
+                                    <div id="permitsTaxesRateDesc" class="sr-only">Percentage for permits and taxes</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="safetyServicesRate" class="tooltip">Safety/Sanitation/Security (%)<span class="tooltiptext">Percentage for safety, sanitation, and security services</span></label>
+                                    <input type="number" id="safetyServicesRate" value="2.5" step="0.1" min="0" max="10" aria-describedby="safetyServicesRateDesc">
+                                    <div class="error-message" id="safetyServicesRateError">Must be between 0-10%</div>
+                                    <div id="safetyServicesRateDesc" class="sr-only">Percentage for safety, sanitation, and security services</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="bondsInsurancesRate" class="tooltip">Bonds & Insurances (%)<span class="tooltiptext">Percentage for bonds and insurances</span></label>
+                                    <input type="number" id="bondsInsurancesRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="bondsInsurancesRateDesc">
+                                    <div class="error-message" id="bondsInsurancesRateError">Must be between 0-10%</div>
+                                    <div id="bondsInsurancesRateDesc" class="sr-only">Percentage for bonds and insurances</div>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="asBuiltPlansRate" class="tooltip">As-Built Plans (%)<span class="tooltiptext">Percentage for as-built plans and documentation</span></label>
+                                    <input type="number" id="asBuiltPlansRate" value="1" step="0.1" min="0" max="5" aria-describedby="asBuiltPlansRateDesc">
+                                    <div class="error-message" id="asBuiltPlansRateError">Must be between 0-5%</div>
+                                    <div id="asBuiltPlansRateDesc" class="sr-only">Percentage for as-built plans and documentation</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="deliveryHaulingRate" class="tooltip">Delivery & Hauling (%)<span class="tooltiptext">Percentage for delivery and hauling charges</span></label>
+                                    <input type="number" id="deliveryHaulingRate" value="1.5" step="0.1" min="0" max="10" aria-describedby="deliveryHaulingRateDesc">
+                                    <div class="error-message" id="deliveryHaulingRateError">Must be between 0-10%</div>
+                                    <div id="deliveryHaulingRateDesc" class="sr-only">Percentage for delivery and hauling charges</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="contingencyRate" class="tooltip">Contingency (%)<span class="tooltiptext">Percentage for contingency costs</span></label>
+                                    <input type="number" id="contingencyRate" value="5" step="0.1" min="0" max="20" aria-describedby="contingencyRateDesc">
+                                    <div class="error-message" id="contingencyRateError">Must be between 0-20%</div>
+                                    <div id="contingencyRateDesc" class="sr-only">Percentage for contingency costs</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="circuit-summary">
+                            <h4>Circuit Summary</h4>
+                            <div id="circuitSummaryContent">
+                                <p>No circuits defined yet. Add circuits in the Circuit Types tab.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Circuit Types Tab -->
+                    <div class="tab-content" id="circuit-tab" role="tabpanel" aria-labelledby="tab-circuit">
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>Multi-Wire Circuit Configuration</span>
+                                <button type="button" class="btn btn-sm btn-success" id="addCircuitBtn">+ Add Circuit</button>
+                            </div>
+                            <p style="margin-bottom: 15px; color: var(--text-medium);">Configure different circuit types with their NEC requirements. Percentages must total 100%.</p>
+                            
+                            <div class="input-row-circuit">
+                                <div class="input-group">
+                                    <label>Circuit Description</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Wire Size</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>% of Total</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Conductors</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Devices</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Clamps</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Action</label>
+                                </div>
+                            </div>
+                            
+                            <div id="circuitsContainer">
+                                <!-- Circuits will be added here dynamically -->
+                            </div>
+                            
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Total Distribution</label>
+                                    <input type="text" id="circuitDistributionTotal" value="0%" readonly style="background-color: #f8f9fa; font-weight: bold;">
+                                    <div class="error-message" id="circuitDistributionError" style="color: var(--danger);">Circuit percentages must add up to 100%</div>
+                                </div>
+                                <div class="input-group">
+                                    <label>Total Boxes (Preview)</label>
+                                    <input type="text" id="circuitTotalBoxes" value="0 boxes" readonly style="background-color: #f8f9fa;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>NEC Compliance Results</span>
+                            </div>
+                            <div id="circuitNecResults">
+                                <p>NEC compliance calculations will appear here after circuits are defined and calculated.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box Distribution Tab -->
+                    <div class="tab-content" id="distribution-tab" role="tabpanel" aria-labelledby="tab-distribution">
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>Box Type Distribution (%)</span>
+                            </div>
+                            <p style="margin-bottom: 15px; color: var(--text-medium);">Define the percentage distribution of different box types. Total must equal 100%.</p>
+                            
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="pctJunc" class="tooltip">Junction Boxes (%)<span class="tooltiptext">Percentage of 4x4 junction boxes</span></label>
+                                    <input type="number" id="pctJunc" value="40" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="pctUtil" class="tooltip">Utility Boxes (%)<span class="tooltiptext">Percentage of utility boxes</span></label>
+                                    <input type="number" id="pctUtil" value="30" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="pctSq" class="tooltip">Square Boxes (%)<span class="tooltiptext">Percentage of 4x4 square boxes</span></label>
+                                    <input type="number" id="pctSq" value="15" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="pctPull" class="tooltip">Pull Boxes (%)<span class="tooltiptext">Percentage of pull boxes</span></label>
+                                    <input type="number" id="pctPull" value="5" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="pctGutter" class="tooltip">Gutters (%)<span class="tooltiptext">Percentage of wire gutters</span></label>
+                                    <input type="number" id="pctGutter" value="3" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="pctWire4" class="tooltip">Wireway 4x4 (%)<span class="tooltiptext">Percentage of 4x4 wireways</span></label>
+                                    <input type="number" id="pctWire4" value="3" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="pctWire6" class="tooltip">Wireway 6x6 (%)<span class="tooltiptext">Percentage of 6x6 wireways</span></label>
+                                    <input type="number" id="pctWire6" value="2" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="pctWire8" class="tooltip">Wireway 8x8 (%)<span class="tooltiptext">Percentage of 8x8 wireways</span></label>
+                                    <input type="number" id="pctWire8" value="2" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label>Total</label>
+                                    <input type="text" id="distributionTotal" value="100%" readonly style="background-color: #f8f9fa; font-weight: bold;">
+                                    <div class="error-message" id="distributionError" style="color: var(--danger);">Distribution percentages must add up to 100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cost Parameters Tab -->
+                    <div class="tab-content" id="cost-tab" role="tabpanel" aria-labelledby="tab-cost">
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>Labor Parameters</span>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="laborRate" class="tooltip">Labor Rate (<span class="currency-unit">PHP</span>/hr)<span class="tooltiptext">Hourly labor rate per worker</span></label>
+                                    <input type="number" id="laborRate" value="250" min="0" step="1">
+                                    <div class="error-message" id="laborRateError">Must be positive</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="productivity" class="tooltip">Productivity (boxes/hr/worker)<span class="tooltiptext">Number of boxes installed per hour per worker</span></label>
+                                    <input type="number" id="productivity" value="2.5" min="0" step="0.1">
+                                    <div class="error-message" id="productivityError">Must be positive</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="crewSize" class="tooltip">Crew Size<span class="tooltiptext">Number of workers in the crew</span></label>
+                                    <input type="number" id="crewSize" value="3" min="1" step="1">
+                                    <div class="error-message" id="crewSizeError">Must be at least 1</div>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="workHours" class="tooltip">Work Hours per Day<span class="tooltiptext">Number of working hours per day</span></label>
+                                    <input type="number" id="workHours" value="8" min="1" max="24" step="0.5">
+                                    <div class="error-message" id="workHoursError">Must be between 1-24</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="overheadRate" class="tooltip">Overhead Rate (%)<span class="tooltiptext">General overhead percentage</span></label>
+                                    <input type="number" id="overheadRate" value="18" min="0" max="100" step="0.1">
+                                    <div class="error-message" id="overheadRateError">Must be between 0-100%</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="profitMarginRate" class="tooltip">Profit Margin (%)<span class="tooltiptext">Desired profit margin percentage</span></label>
+                                    <input type="number" id="profitMarginRate" value="22" min="0" max="100" step="0.1">
+                                    <div class="error-message" id="profitMarginError">Must be between 0-100%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>Equipment & Transportation</span>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="equipmentCost" class="tooltip">Equipment Cost (%)<span class="tooltiptext">Percentage for equipment costs</span></label>
+                                    <input type="number" id="equipmentCost" value="8" min="0" max="50" step="0.1">
+                                    <div class="error-message" id="equipmentCostError">Must be between 0-50%</div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="transportationCost" class="tooltip">Transportation Cost (%)<span class="tooltiptext">Percentage for transportation costs</span></label>
+                                    <input type="number" id="transportationCost" value="5" min="0" max="50" step="0.1">
+                                    <div class="error-message" id="transportationCostError">Must be between 0-50%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="work-item">
+                            <div class="work-item-title">
+                                <span>Material Unit Costs (<span class="currency-unit">PHP</span>)</span>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="costJunc" class="tooltip">Junction Box<span class="tooltiptext">Cost per 4x4 junction box</span></label>
+                                    <input type="number" id="costJunc" value="150" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costUtil" class="tooltip">Utility Box<span class="tooltiptext">Cost per utility box</span></label>
+                                    <input type="number" id="costUtil" value="120" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costSq" class="tooltip">Square Box<span class="tooltiptext">Cost per 4x4 square box</span></label>
+                                    <input type="number" id="costSq" value="140" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="costPull" class="tooltip">Pull Box<span class="tooltiptext">Cost per pull box</span></label>
+                                    <input type="number" id="costPull" value="450" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costGutter" class="tooltip">Gutter<span class="tooltiptext">Cost per wire gutter</span></label>
+                                    <input type="number" id="costGutter" value="320" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costNip" class="tooltip">Closed Nipple<span class="tooltiptext">Cost per closed nipple</span></label>
+                                    <input type="number" id="costNip" value="25" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="costWire4" class="tooltip">Wireway 4x4<span class="tooltiptext">Cost per 4x4 wireway</span></label>
+                                    <input type="number" id="costWire4" value="280" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costWire6" class="tooltip">Wireway 6x6<span class="tooltiptext">Cost per 6x6 wireway</span></label>
+                                    <input type="number" id="costWire6" value="380" min="0" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label for="costWire8" class="tooltip">Wireway 8x8<span class="tooltiptext">Cost per 8x8 wireway</span></label>
+                                    <input type="number" id="costWire8" value="520" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="costCover" class="tooltip">Covers<span class="tooltiptext">Cost per blank cover</span></label>
+                                    <input type="number" id="costCover" value="35" min="0" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="input-group" style="margin-top: 20px;">
                     <button class="btn btn-primary" id="calculateBtn" style="width: 100%; padding: 12px; font-size: 1.1rem;">Calculate</button>
@@ -1651,7 +1948,7 @@
         `;
     }
 
-    // Main calculation function - UPDATED FOR NEW COST BREAKDOWN
+    // Main calculation function
     function calculateEstimate() {
         console.log('Calculate button clicked');
         
@@ -2171,7 +2468,7 @@
         }
     }
     
-    // Input validation function - UPDATED for new indirect cost fields
+    // Input validation function
     function validateInputs() {
         let isValid = true;
         
@@ -2362,7 +2659,7 @@
         return isValid;
     }
     
-    // Enhanced PDF Export Functions for Multi-Wire - UPDATED for new cost structure
+    // Enhanced PDF Export Functions
     function getSelectedCurrency() {
         const el = document.getElementById('currency');
         return el ? el.value : 'PHP';
@@ -2457,7 +2754,7 @@
                 doc.text(`Multi-Wire NEC 2023 Compliant`, pageWidth - CONTENT_MARGIN_R, pageHeight - 12, { align: 'right' });
             }
 
-            // Common AutoTable options - Full width tables
+            // Common AutoTable options
             const TABLE_OPTS = {
                 margin: { 
                     left: CONTENT_MARGIN_L, 
@@ -2482,7 +2779,7 @@
                 },
                 alternateRowStyles: { fillColor: [245, 245, 245] },
                 didDrawPage: drawHeaderFooter,
-                tableWidth: 'auto' // This makes tables stretch to full width
+                tableWidth: 'auto'
             };
 
             // Section helper
@@ -2652,7 +2949,7 @@
                 }
             });
 
-            // ==== COMPLETE COST BREAKDOWN (NEW STRUCTURE) ====
+            // ==== COMPLETE COST BREAKDOWN ====
             startY = sectionTitle('COMPLETE COST BREAKDOWN');
             
             const costData = [
@@ -2905,10 +3202,7 @@
         }
     }
 
-    // Update the event listener to use the new function
-    document.getElementById('exportPdfBtn').addEventListener('click', exportToPDF);
-    
-    // Export to Excel - UPDATED for new cost structure
+    // Export to Excel
     function exportToExcel() {
         if (!projectData.totals) {
             alert('No results to export. Please calculate an estimate first.');
@@ -2985,7 +3279,7 @@
         const circuitWs = XLSX.utils.aoa_to_sheet(circuitData);
         XLSX.utils.book_append_sheet(wb, circuitWs, 'Circuit Summary');
         
-        // Create Complete Cost Breakdown sheet (NEW STRUCTURE)
+        // Create Complete Cost Breakdown sheet
         const costData = [
             ['COMPLETE COST BREAKDOWN'],
             ['Category', 'Amount', 'Percentage'],
@@ -3074,7 +3368,7 @@
         XLSX.writeFile(wb, 'Multi_Wire_Electrical_Estimate_' + projectData.projectName.replace(/\s+/g, '_') + '.xlsx');
     }
     
-    // Reset function - UPDATED for new indirect cost fields
+    // Reset function
     function resetCalculator() {
         if (confirm('Are you sure you want to reset all inputs? This action cannot be undone.')) {
             // Reset form inputs to default values
@@ -3107,7 +3401,7 @@
             // Reset circuits
             document.getElementById('circuitsContainer').innerHTML = '';
             
-            // Reset results with updated 8-column structure
+            // Reset results
             document.getElementById('billOfQuantity').innerHTML = `
                 <thead>
                     <tr>
@@ -3159,7 +3453,7 @@
                 </tfoot>
             `;
             
-            // Reset NEW Cost Breakdown
+            // Reset Cost Breakdown
             document.getElementById('materialCostDisplay').textContent = 'PHP 0.00';
             document.getElementById('laborCostDisplay').textContent = 'PHP 0.00';
             document.getElementById('totalDirectCostDisplay').textContent = 'PHP 0.00';

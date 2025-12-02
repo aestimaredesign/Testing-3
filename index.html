@@ -743,7 +743,30 @@
             transition-duration: 0.01ms !important;
         }
     }
-    </style>
+
+    /* Improved indentation for NEC compliance */
+    .nec-compliance-details {
+        margin-left: 20px;
+    }
+    
+    .nec-compliance-details ul {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .nec-compliance-details li {
+        margin-bottom: 5px;
+    }
+    
+    .nec-compliance-subsection {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    
+    .nec-compliance-subsection p {
+        margin-left: 20px;
+    }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -763,7 +786,7 @@
     <main id="main-content">
         <div class="calculator-grid">
             <div class="input-section">
-                <!-- PROJECT INPUT SECTION (MISSING FROM YOUR CODE) -->
+                <!-- PROJECT INPUT SECTION -->
                 <div class="work-item">
                     <div class="work-item-title">
                         <span>Project Input</span>
@@ -817,6 +840,7 @@
                         <div class="tab" data-tab="circuit" id="tab-circuit" role="tab" aria-controls="circuit-tab" aria-selected="false">Circuit Types</div>
                         <div class="tab" data-tab="distribution" id="tab-distribution" role="tab" aria-controls="distribution-tab" aria-selected="false">Box Distribution</div>
                         <div class="tab" data-tab="cost" id="tab-cost" role="tab" aria-controls="cost-tab" aria-selected="false">Cost Parameters</div>
+                        <div class="tab" data-tab="help" id="tab-help" role="tab" aria-controls="help-tab" aria-selected="false">Help & Reference</div>
                     </div>
 
                     <!-- General Tab -->
@@ -1139,6 +1163,107 @@
                                     <label for="costCover" class="tooltip">Covers<span class="tooltiptext">Cost per blank cover</span></label>
                                     <input type="number" id="costCover" value="35" min="0" step="0.01">
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help & Reference Tab -->
+                    <div class="tab-content" id="help-tab" role="tabpanel" aria-labelledby="tab-help">
+                        <div class="help-section how-to-use">
+                            <h3>How to Use This Calculator</h3>
+                            <div class="step-guide">
+                                <p><span class="step-number">1</span> Start by filling out the <strong>Project Input</strong> section in the General tab with your project details.</p>
+                                <p><span class="step-number">2</span> Enter the <strong>Wall Area</strong> (in square meters) and <strong>Box Density</strong> (boxes per square meter) to calculate the total number of boxes needed.</p>
+                                <p><span class="step-number">3</span> Go to the <strong>Circuit Types</strong> tab to define your multi-wire circuits. Add each circuit type with its wire size, percentage distribution, and NEC requirements.</p>
+                                <p><span class="step-number">4</span> In the <strong>Box Distribution</strong> tab, specify what percentage of boxes should be each type (junction, utility, square, etc.). The total must equal 100%.</p>
+                                <p><span class="step-number">5</span> Configure all cost parameters in the <strong>Cost Parameters</strong> tab, including labor rates, material costs, and indirect cost percentages.</p>
+                                <p><span class="step-number">6</span> Click the <strong>Calculate</strong> button to generate your estimate. Review the results in the right panel.</p>
+                                <p><span class="step-number">7</span> Use the <strong>Export PDF</strong> or <strong>Export Excel</strong> buttons to save your estimate for reporting.</p>
+                            </div>
+                        </div>
+
+                        <div class="help-section calculation-formulas">
+                            <h3>Calculation Formulas</h3>
+                            <div class="formula-box">
+                                <h4>Total Boxes Calculation</h4>
+                                <p><strong>Total Boxes = Wall Area (m²) × Box Density (boxes/m²)</strong></p>
+                                <p>This calculates the total number of electrical boxes needed for the project.</p>
+                                
+                                <h4>NEC Box Fill Calculation (NEC 314.16)</h4>
+                                <p><strong>Volume Required = (Conductors + Pigtails + Devices × 2 + Clamps + Ground) × Volume per Conductor</strong></p>
+                                <p><strong>Volume with Safety Factor = Volume Required × (1 + Safety Factor)</strong></p>
+                                <p>Where Safety Factor is typically 20% (0.20) for engineering margin.</p>
+                                
+                                <h4>Conductor Volume Table (per NEC 314.16)</h4>
+                                <ul>
+                                    <li>18 AWG: 1.5 cubic inches</li>
+                                    <li>16 AWG: 1.75 cubic inches</li>
+                                    <li>14 AWG: 2.0 cubic inches</li>
+                                    <li>12 AWG: 2.25 cubic inches</li>
+                                    <li>10 AWG: 2.5 cubic inches</li>
+                                    <li>8 AWG: 3.0 cubic inches</li>
+                                    <li>6 AWG: 5.0 cubic inches</li>
+                                </ul>
+                                
+                                <h4>Cost Calculations</h4>
+                                <p><strong>Material Cost = Quantity × Unit Cost × (1 + Wastage Rate)</strong></p>
+                                <p><strong>Labor Cost = (Total Boxes ÷ Productivity) × Labor Rate × Crew Size</strong></p>
+                                <p><strong>Direct Cost = Material Cost + Labor Cost</strong></p>
+                                <p><strong>Indirect Costs = Direct Cost × (Equipment% + Transportation% + Temp Facilities% + ...)</strong></p>
+                                <p><strong>Grand Total = Direct Cost + Indirect Costs</strong></p>
+                                <p><strong>Projected Budget = Grand Total × (1 + Profit Margin%)</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="help-section standard-sizes">
+                            <h3>Standard Box Sizes & NEC Compliance</h3>
+                            <div class="reference-box">
+                                <h4>Common Electrical Box Capacities</h4>
+                                <ul>
+                                    <li><strong>Utility Box (Standard)</strong>: 18.0 cubic inches</li>
+                                    <li><strong>Utility Box (Deep)</strong>: 22.5 cubic inches</li>
+                                    <li><strong>4x4 Junction Box (1.5")</strong>: 21.0 cubic inches</li>
+                                    <li><strong>4x4 Junction Box (2.125")</strong>: 30.3 cubic inches</li>
+                                    <li><strong>4x4 Square Box (1.5")</strong>: 21.0 cubic inches</li>
+                                    <li><strong>4x4 Square Box (2.125")</strong>: 30.3 cubic inches</li>
+                                    <li><strong>Two Gang Box (Standard)</strong>: 30.0 cubic inches</li>
+                                    <li><strong>Two Gang Box (Deep)</strong>: 42.0 cubic inches</li>
+                                </ul>
+                                
+                                <h4>NEC 314.16 Key Requirements</h4>
+                                <ul>
+                                    <li>Each current-carrying conductor counts as one volume unit</li>
+                                    <li>All grounding conductors combined count as one volume unit</li>
+                                    <li>Each device (switch or receptacle) counts as two volume units</li>
+                                    <li>Each internal cable clamp counts as one volume unit</li>
+                                    <li>Pigtails are counted as additional conductors</li>
+                                    <li>A 20% safety factor is recommended for engineering margin</li>
+                                </ul>
+                                
+                                <h4>Automatic Box Upgrades</h4>
+                                <p>The calculator automatically upgrades boxes when NEC requirements are not met:</p>
+                                <ul>
+                                    <li>Utility Box (Standard) → Utility Box (Deep)</li>
+                                    <li>4x4 Junction Box (1.5") → 4x4 Junction Box (2.125")</li>
+                                    <li>4x4 Square Box (1.5") → 4x4 Square Box (2.125")</li>
+                                    <li>Two Gang Box (Standard) → Two Gang Box (Deep)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="help-section test-cases">
+                            <h3>Example Test Cases</h3>
+                            <div class="test-case">
+                                <h4>Residential Lighting Circuit</h4>
+                                <p><strong>Scenario</strong>: 14 AWG lighting circuit with 4 current conductors, 1 device, and 2 clamps</p>
+                                <p><strong>Calculation</strong>: (4 + 2 pigtails + 2 for device + 2 clamps + 1 ground) = 11 conductors × 2.0 cu.in. = 22.0 cu.in. required</p>
+                                <p><strong>Result</strong>: Utility Box (Standard) at 18.0 cu.in. is NOT sufficient. Auto-upgrades to Utility Box (Deep) at 22.5 cu.in.</p>
+                            </div>
+                            <div class="test-case">
+                                <h4>Commercial Appliance Circuit</h4>
+                                <p><strong>Scenario</strong>: 12 AWG circuit with 6 current conductors, 2 devices, and 3 clamps</p>
+                                <p><strong>Calculation</strong>: (6 + 2 pigtails + 4 for devices + 3 clamps + 1 ground) = 16 conductors × 2.25 cu.in. = 36.0 cu.in. required</p>
+                                <p><strong>Result</strong>: Requires 4x4 Junction Box (2.125") at 30.3 cu.in. or larger. May need custom or deeper box.</p>
                             </div>
                         </div>
                     </div>
@@ -2233,7 +2358,7 @@
         // Update circuit results summary
         updateCircuitResultsSummary(circuitResults, totalOutlets);
         
-        // Update NEC compliance summary
+        // Update NEC compliance summary with proper indentation
         checkNECCompliance(necAdjustments, circuitResults);
         
         // Update currency units
@@ -2422,12 +2547,13 @@
         summaryElement.innerHTML = summaryHTML;
     }
     
-    // Enhanced NEC compliance check for multi-wire
+    // Enhanced NEC compliance check for multi-wire with proper indentation
     function checkNECCompliance(necAdjustments = [], circuitResults = []) {
         const summaryElement = document.getElementById('necComplianceSummary');
         const warningElement = document.getElementById('necComplianceWarning');
         
-        let summaryHTML = '<p><strong>Multi-Wire NEC 314.16 Compliance Summary:</strong></p>';
+        let summaryHTML = '<div class="nec-compliance-details">';
+        summaryHTML += '<p><strong>Multi-Wire NEC 314.16 Compliance Summary:</strong></p>';
         
         let hasComplianceIssue = false;
         let allCompliant = true;
@@ -2440,24 +2566,32 @@
             }
             
             summaryHTML += `
-                <p><strong>${circuit.description} (${circuit.wireSize} AWG):</strong></p>
-                <ul>
-                    <li>Required Volume: ${formatNumber(nec.volumeWithSafety, 2)} cu. in.</li>
-                    <li>Status: <span style="color: ${nec.isCompliant ? '#2e7d32' : '#c62828'}">${nec.isCompliant ? 'COMPLIANT' : 'NON-COMPLIANT'}</span></li>
-                    <li>Minimum Box: ${nec.smallestSuitableBox || 'Custom box required'}</li>
-                </ul>
+                <div class="nec-compliance-subsection">
+                    <p><strong>${circuit.description} (${circuit.wireSize} AWG):</strong></p>
+                    <ul>
+                        <li>Required Volume: ${formatNumber(nec.volumeWithSafety, 2)} cu. in.</li>
+                        <li>Status: <span style="color: ${nec.isCompliant ? '#2e7d32' : '#c62828'}">${nec.isCompliant ? 'COMPLIANT' : 'NON-COMPLIANT'}</span></li>
+                        <li>Minimum Box: ${nec.smallestSuitableBox || 'Custom box required'}</li>
+                    </ul>
+                </div>
             `;
         });
         
         if (necAdjustments.length > 0) {
-            summaryHTML += '<p><strong>Automatic Adjustments Applied:</strong></p><ul>';
+            summaryHTML += '<div class="nec-compliance-subsection">';
+            summaryHTML += '<p><strong>Automatic Adjustments Applied:</strong></p>';
+            summaryHTML += '<ul>';
             necAdjustments.forEach(adjustment => {
                 summaryHTML += `<li>${adjustment}</li>`;
             });
             summaryHTML += '</ul>';
+            summaryHTML += '</div>';
         }
         
-        summaryHTML += `<p><strong>Overall Project Status:</strong> <span style="color: ${allCompliant ? '#2e7d32' : '#c62828'}">${allCompliant ? 'FULLY COMPLIANT' : 'REVIEW REQUIRED'}</span></p>`;
+        summaryHTML += `<div class="nec-compliance-subsection">
+            <p><strong>Overall Project Status:</strong> <span style="color: ${allCompliant ? '#2e7d32' : '#c62828'}">${allCompliant ? 'FULLY COMPLIANT' : 'REVIEW REQUIRED'}</span></p>
+        </div>`;
+        summaryHTML += '</div>';
         
         summaryElement.innerHTML = summaryHTML;
         

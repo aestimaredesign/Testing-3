@@ -892,7 +892,7 @@
                                 <div class="input-group">
                                     <label for="permitsTaxesRate" class="tooltip">Permits & Taxes (%)<span class="tooltiptext">Percentage for permits and taxes</span></label>
                                     <input type="number" id="permitsTaxesRate" value="3" step="0.1" min="0" max="15" aria-describedby="permitsTaxesRateDesc">
-                                    <div class="error-message" id="permitsTaxesRateError">Must be between 0-15%</div>
+                                    <div class="error-message" id="permitsTaxesError">Must be between 0-15%</div>
                                     <div id="permitsTaxesRateDesc" class="sr-only">Percentage for permits and taxes</div>
                                 </div>
                                 <div class="input-group">
@@ -1248,6 +1248,16 @@
                                     <li>4x4 Square Box (1.5") → 4x4 Square Box (2.125")</li>
                                     <li>Two Gang Box (Standard) → Two Gang Box (Deep)</li>
                                 </ul>
+                                
+                                <div class="nec-compliance-subsection">
+                                    <p><strong>Lighting Circuits (12 AWG):</strong></p>
+                                    <ul>
+                                        <li>Conductors: 4 current + 2 pigtails = 6 × 2.25 cu. in.</li>
+                                        <li>Devices: 1 × 2 × 2.25 cu. in.</li>
+                                        <li>Clamps: 2 × 2.25 cu. in.</li>
+                                        <li>Ground: 1 × 2.25 cu. in.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -2727,11 +2737,11 @@
         
         const permitsTaxesRate = parseFloat(document.getElementById('permitsTaxesRate').value);
         if (isNaN(permitsTaxesRate) || permitsTaxesRate < 0 || permitsTaxesRate > 15) {
-            document.getElementById('permitsTaxesRateError').style.display = 'block';
+            document.getElementById('permitsTaxesError').style.display = 'block';
             document.getElementById('permitsTaxesRate').classList.add('input-error');
             isValid = false;
         } else {
-            document.getElementById('permitsTaxesRateError').style.display = 'none';
+            document.getElementById('permitsTaxesError').style.display = 'none';
             document.getElementById('permitsTaxesRate').classList.remove('input-error');
         }
         
@@ -2856,7 +2866,7 @@
                 doc.setFont('helvetica', 'bold'); 
                 doc.setFontSize(13);
                 doc.setTextColor(BRAND.r, BRAND.g, BRAND.b);
-                doc.text('PROFESSIONAL ELECTRICAL BOXES & COVERS ESTIMATE', pageWidth / 2, 24, { align: 'center' });
+                doc.text('PROFESSIONAL ELECTRICAL BOXES & Covers ESTIMATE', pageWidth / 2, 24, { align: 'center' });
 
                 // Meta
                 doc.setFont('helvetica', 'normal'); 
